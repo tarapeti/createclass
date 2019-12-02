@@ -1,7 +1,9 @@
 using System;
 
-namespace si1
+namespace csharp_1si
 {
+    public enum Genders { Male, Female };
+
     public class Person
     {
         private String name;
@@ -14,6 +16,8 @@ namespace si1
             this.gender = gender;
         }
 
+        public Person(){}
+
         public String Name { get; set; }
 
         public int Age {get; set; }
@@ -21,10 +25,9 @@ namespace si1
         public Genders Gender {get; set; }
         
 
-        // Method that overrides the base class (System.Object) implementation.
-        public override String ToString()
+       public override String ToString()
         {
-            return this.name + " a neve " + this.age + " éves " + this.gender + " nemű";
+            return Name + " the name " + Age + " age " + Gender + " gender";
         }
     }
 }
