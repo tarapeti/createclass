@@ -1,6 +1,8 @@
+using System;
+
 namespace csharp_1si
 {
-    public class Employee : Person
+    public class Employee : Person, ICloneable
     {
         private int salary;
         private string profession;
@@ -21,6 +23,12 @@ namespace csharp_1si
 
         public Room Room { get; set; }
 
+        public object Clone()
+        {
+            Employee newEmployee = (Employee)this.MemberwiseClone();
+            newEmployee.Room = new Room(Room.RoomNumber);
+            return newEmployee;
+        }
 
         public override string ToString()
         {
